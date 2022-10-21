@@ -1,0 +1,50 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        double calcFahrenheit, calcCelsius, calcKelvin;
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Informe quantas temperaturas devem ser convertidas: ");
+        int n = sc.nextInt();
+
+        int count = 0;
+        while (count < n) {
+            count++;
+
+            Scanner scY = new Scanner(System.in);
+            System.out.print("Escolha uma das letras entre parênteses para representar as temperaturas: fahreinheit (f), celsius (c) e kelvin(k) ");
+            String y = scY.next();
+
+            if (y.equals("c")) {
+                Scanner scX = new Scanner(System.in);
+                System.out.print("Digite a temperatura: ");
+                double temp = scX.nextDouble();
+
+                calcFahrenheit = (temp * 1.8) + 32;
+                calcKelvin = (temp + 273);
+                System.out.println("A temperatura de " + temp + " graus celsius é igual a " + calcKelvin + " graus Kelvin e " + calcFahrenheit + " graus fahrenheit.\n");
+
+            } else if (y.equals("f")) {
+                Scanner scX = new Scanner(System.in);
+                System.out.print("Digite a temperatura: ");
+                double temp = scX.nextDouble();
+
+                calcCelsius = (temp - 32) / 1.8;
+                calcKelvin = (calcCelsius + 273.15);
+                System.out.println("A temperatura de " + temp + " graus fahreinheit é igual a " + calcKelvin + " graus Kelvin e " + calcCelsius + " graus celsius.\n");
+
+            } else if (y.equals("k")) {
+                Scanner scX = new Scanner(System.in);
+                System.out.print("Digite a temperatura: ");
+                double temp = scX.nextDouble();
+
+                calcCelsius = temp - 273.15;
+                calcFahrenheit = (temp - 273.15) * 1.8 + 32;
+                System.out.println("A temperatura de " + temp + " graus kelvin é igual a " + calcCelsius + " graus celsius e " + calcFahrenheit + " graus fahreinheit.\n");
+            }
+
+        }
+    }
+}
